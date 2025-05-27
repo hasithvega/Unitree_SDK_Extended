@@ -6,6 +6,8 @@ This project is an extend for the Unitree SDK2 (DDS version) and the SLAM packag
 
 All the functions are based on the Unitree SDK2, so you might install the SDK first, for the beginers to develop the Unitree robots like G1/Go2/B2 that support develop by [Unitree SDK2](https://github.com/unitreerobotics/unitree_sdk2)
 
+And also include some docs for the beginers developing with Unitree SDK2 and this extend.
+
 ## Fast setup
 
 Ah I'm going to off work, let me write it tomorrow.
