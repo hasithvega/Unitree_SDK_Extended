@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from unitree_interfaces/msg/PcToImage.msg
+// generated code does not contain a copyright notice
+
+#include "sensor_msgs/msg/Image.idl"
+
+module unitree_interfaces {
+  module msg {
+    struct PcToImage {
+      float x;
+
+      float y;
+
+      float res;
+
+      sequence<uint16> image_x;
+
+      sequence<uint16> image_y;
+
+      sensor_msgs::msg::Image image;
+    };
+  };
+};

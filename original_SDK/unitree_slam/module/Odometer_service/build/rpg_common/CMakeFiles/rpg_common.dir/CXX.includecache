@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/unitree/module/Odometer_service/src/rpg_svo_pro_open/rpg_common/include/rpg_common/fs.h
+string
+-
+vector
+-
+
+/unitree/module/Odometer_service/src/rpg_svo_pro_open/rpg_common/src/fs.cpp
+rpg_common/fs.h
+/unitree/module/Odometer_service/src/rpg_svo_pro_open/rpg_common/src/rpg_common/fs.h
+dirent.h
+-
+sys/stat.h
+-
+glog/logging.h
+-
+

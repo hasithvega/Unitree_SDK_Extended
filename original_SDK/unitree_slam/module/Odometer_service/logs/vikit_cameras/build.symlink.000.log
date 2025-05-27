@@ -1,0 +1,4 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/libvikit_cameras.so
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/vikit_cameras.pc
+Symlinking /unitree/module/Odometer_service/devel/share/vikit_cameras/cmake/vikit_camerasConfig-version.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/vikit_cameras/cmake/vikit_camerasConfig.cmake

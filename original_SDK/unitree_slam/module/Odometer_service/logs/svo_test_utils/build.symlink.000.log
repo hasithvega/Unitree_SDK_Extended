@@ -1,0 +1,4 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/libsvo_test_utils.so
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/svo_test_utils.pc
+Symlinking /unitree/module/Odometer_service/devel/share/svo_test_utils/cmake/svo_test_utilsConfig-version.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/svo_test_utils/cmake/svo_test_utilsConfig.cmake

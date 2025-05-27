@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /unitree/module/Odometer_service/devel/.private/rpg_common/setup.sh

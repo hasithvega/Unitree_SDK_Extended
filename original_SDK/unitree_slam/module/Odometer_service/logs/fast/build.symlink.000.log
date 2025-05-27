@@ -1,0 +1,4 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/libfast.so
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/fast.pc
+Symlinking /unitree/module/Odometer_service/devel/share/fast/cmake/fastConfig.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/fast/cmake/fastConfig-version.cmake

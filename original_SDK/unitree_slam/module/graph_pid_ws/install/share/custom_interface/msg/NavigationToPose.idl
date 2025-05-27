@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_interface/msg/NavigationToPose.msg
+// generated code does not contain a copyright notice
+
+
+module custom_interface {
+  module msg {
+    struct NavigationToPose {
+      string id;
+
+      double pose_x;
+
+      double pose_y;
+
+      double pose_z;
+
+      double quat_x;
+
+      double quat_y;
+
+      double quat_z;
+
+      double quat_w;
+    };
+  };
+};

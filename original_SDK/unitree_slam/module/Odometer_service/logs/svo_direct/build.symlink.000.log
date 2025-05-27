@@ -1,0 +1,8 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/libsvo_direct.so
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/svo_direct.pc
+Symlinking /unitree/module/Odometer_service/devel/lib/svo_direct/svo_test_patch_score
+Symlinking /unitree/module/Odometer_service/devel/lib/svo_direct/svo_test_edgelet_direction
+Symlinking /unitree/module/Odometer_service/devel/lib/svo_direct/svo_test_edgelet_extraction
+Symlinking /unitree/module/Odometer_service/devel/lib/svo_direct/svo_test_feature_alignment
+Symlinking /unitree/module/Odometer_service/devel/share/svo_direct/cmake/svo_directConfig.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/svo_direct/cmake/svo_directConfig-version.cmake

@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from unitree_interfaces/msg/GaitCmd.msg
+// generated code does not contain a copyright notice
+
+
+module unitree_interfaces {
+  module msg {
+    typedef float float__2[2];
+    typedef float float__3[3];
+    struct GaitCmd {
+      uint8 mode;
+
+      uint8 gait_type;
+
+      uint8 speed_level;
+
+      float foot_raise_height;
+
+      float body_height;
+
+      float__2 position;
+
+      float__3 euler;
+
+      float__2 velocity;
+
+      float yaw_speed;
+    };
+  };
+};

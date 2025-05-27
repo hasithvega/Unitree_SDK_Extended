@@ -1,0 +1,8 @@
+prefix=/unitree/module/Odometer_service/install
+
+Name: rqt_svo
+Description: Description of rqt_svo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

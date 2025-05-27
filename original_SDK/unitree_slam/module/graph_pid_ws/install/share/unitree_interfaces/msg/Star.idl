@@ -1,0 +1,12 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from unitree_interfaces/msg/Star.msg
+// generated code does not contain a copyright notice
+
+
+module unitree_interfaces {
+  module msg {
+    struct Star {
+      uint8 off;
+    };
+  };
+};

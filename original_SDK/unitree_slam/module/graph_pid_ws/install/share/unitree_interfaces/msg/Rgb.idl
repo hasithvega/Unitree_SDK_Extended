@@ -1,0 +1,16 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from unitree_interfaces/msg/Rgb.msg
+// generated code does not contain a copyright notice
+
+
+module unitree_interfaces {
+  module msg {
+    struct Rgb {
+      uint8 r;
+
+      uint8 g;
+
+      uint8 b;
+    };
+  };
+};

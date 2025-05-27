@@ -1,0 +1,7 @@
+{
+  "package_name": "hesai_lidar",
+  "non_idl_tuples": [
+    "/unitree/module/graph_pid_ws/src/HesaiLidar_General_ROS-ROS2:msg/PandarPacket.msg",
+    "/unitree/module/graph_pid_ws/src/HesaiLidar_General_ROS-ROS2:msg/PandarScan.msg"
+  ]
+}

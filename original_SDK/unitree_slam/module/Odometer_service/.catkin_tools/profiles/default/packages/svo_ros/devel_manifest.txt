@@ -1,0 +1,9 @@
+rpg_svo_pro_open/svo_ros
+/unitree/module/Odometer_service/devel/.private/svo_ros/cmake.lock /unitree/module/Odometer_service/devel/./cmake.lock
+/unitree/module/Odometer_service/devel/.private/svo_ros/lib/libsvo_ros.so /unitree/module/Odometer_service/devel/lib/libsvo_ros.so
+/unitree/module/Odometer_service/devel/.private/svo_ros/lib/libsvo_nodelet.so /unitree/module/Odometer_service/devel/lib/libsvo_nodelet.so
+/unitree/module/Odometer_service/devel/.private/svo_ros/lib/pkgconfig/svo_ros.pc /unitree/module/Odometer_service/devel/lib/pkgconfig/svo_ros.pc
+/unitree/module/Odometer_service/devel/.private/svo_ros/lib/svo_ros/svo_node /unitree/module/Odometer_service/devel/lib/svo_ros/svo_node
+/unitree/module/Odometer_service/devel/.private/svo_ros/lib/svo_ros/svo_benchmark /unitree/module/Odometer_service/devel/lib/svo_ros/svo_benchmark
+/unitree/module/Odometer_service/devel/.private/svo_ros/share/svo_ros/cmake/svo_rosConfig.cmake /unitree/module/Odometer_service/devel/share/svo_ros/cmake/svo_rosConfig.cmake
+/unitree/module/Odometer_service/devel/.private/svo_ros/share/svo_ros/cmake/svo_rosConfig-version.cmake /unitree/module/Odometer_service/devel/share/svo_ros/cmake/svo_rosConfig-version.cmake

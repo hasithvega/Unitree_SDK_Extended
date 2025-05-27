@@ -1,0 +1,7 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/libsvo_ros.so
+Symlinking /unitree/module/Odometer_service/devel/lib/libsvo_nodelet.so
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/svo_ros.pc
+Symlinking /unitree/module/Odometer_service/devel/lib/svo_ros/svo_node
+Symlinking /unitree/module/Odometer_service/devel/lib/svo_ros/svo_benchmark
+Symlinking /unitree/module/Odometer_service/devel/share/svo_ros/cmake/svo_rosConfig.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/svo_ros/cmake/svo_rosConfig-version.cmake

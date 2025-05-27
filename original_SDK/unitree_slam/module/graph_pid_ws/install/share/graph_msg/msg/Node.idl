@@ -1,0 +1,39 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from graph_msg/msg/Node.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Float32MultiArray.idl"
+
+module graph_msg {
+  module msg {
+    @verbatim (language="comment", text=
+      "点名称序列")
+    struct Node {
+      sequence<uint16> node_name;
+
+      @verbatim (language="comment", text=
+        "点的坐标和Yaw值")
+      sequence<float> node_position_x;
+
+      sequence<float> node_position_y;
+
+      sequence<float> node_position_z;
+
+      sequence<float> node_yaw;
+
+      @verbatim (language="comment", text=
+        "点的属性")
+      sequence<uint16> node_attribute;
+
+      @verbatim (language="comment", text=
+        "预留空间")
+      sequence<uint16> undefined;
+
+      sequence<uint16> node_state_2;
+
+      sequence<uint16> node_state_3;
+
+      sequence<std_msgs::msg::Float32MultiArray> node_state_list;
+    };
+  };
+};

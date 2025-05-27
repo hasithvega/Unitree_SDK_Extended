@@ -1,0 +1,4 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/libvikit_ros.so
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/vikit_ros.pc
+Symlinking /unitree/module/Odometer_service/devel/share/vikit_ros/cmake/vikit_rosConfig-version.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/vikit_ros/cmake/vikit_rosConfig.cmake

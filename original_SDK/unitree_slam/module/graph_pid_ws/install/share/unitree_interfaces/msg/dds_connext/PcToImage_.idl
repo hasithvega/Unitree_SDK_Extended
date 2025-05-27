@@ -1,0 +1,37 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from unitree_interfaces:msg/PcToImage.idl
+// generated code does not contain a copyright notice
+#include "sensor_msgs/msg/dds_connext/Image_.idl"
+
+#ifndef __unitree_interfaces__msg__pc_to_image__idl__
+#define __unitree_interfaces__msg__pc_to_image__idl__
+
+
+module unitree_interfaces {
+
+module msg {
+
+module dds_ {
+
+
+struct PcToImage_ {
+float x_;
+float y_;
+float res_;
+sequence<unsigned short> image_x_;
+
+sequence<unsigned short> image_y_;
+
+sensor_msgs::msg::dds_::Image_ image_;
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module unitree_interfaces
+
+
+#endif  // __unitree_interfaces__msg__pc_to_image__idl__

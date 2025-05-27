@@ -1,0 +1,10 @@
+rpg_svo_pro_open/svo_direct
+/unitree/module/Odometer_service/devel/.private/svo_direct/cmake.lock /unitree/module/Odometer_service/devel/./cmake.lock
+/unitree/module/Odometer_service/devel/.private/svo_direct/lib/libsvo_direct.so /unitree/module/Odometer_service/devel/lib/libsvo_direct.so
+/unitree/module/Odometer_service/devel/.private/svo_direct/lib/pkgconfig/svo_direct.pc /unitree/module/Odometer_service/devel/lib/pkgconfig/svo_direct.pc
+/unitree/module/Odometer_service/devel/.private/svo_direct/lib/svo_direct/svo_test_patch_score /unitree/module/Odometer_service/devel/lib/svo_direct/svo_test_patch_score
+/unitree/module/Odometer_service/devel/.private/svo_direct/lib/svo_direct/svo_test_edgelet_direction /unitree/module/Odometer_service/devel/lib/svo_direct/svo_test_edgelet_direction
+/unitree/module/Odometer_service/devel/.private/svo_direct/lib/svo_direct/svo_test_edgelet_extraction /unitree/module/Odometer_service/devel/lib/svo_direct/svo_test_edgelet_extraction
+/unitree/module/Odometer_service/devel/.private/svo_direct/lib/svo_direct/svo_test_feature_alignment /unitree/module/Odometer_service/devel/lib/svo_direct/svo_test_feature_alignment
+/unitree/module/Odometer_service/devel/.private/svo_direct/share/svo_direct/cmake/svo_directConfig.cmake /unitree/module/Odometer_service/devel/share/svo_direct/cmake/svo_directConfig.cmake
+/unitree/module/Odometer_service/devel/.private/svo_direct/share/svo_direct/cmake/svo_directConfig-version.cmake /unitree/module/Odometer_service/devel/share/svo_direct/cmake/svo_directConfig-version.cmake

@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from unitree_api/srv/WebCommand.srv
+// generated code does not contain a copyright notice
+
+#include "unitree_api/msg/RequestHeader.idl"
+#include "unitree_api/msg/ResponseHeader.idl"
+
+module unitree_api {
+  module srv {
+    @verbatim (language="comment", text=
+      " 命令内容")
+    struct WebCommand_Request {
+      unitree_api::msg::RequestHeader header;
+
+      string parameter;
+
+      sequence<uint8> binary;
+    };
+    @verbatim (language="comment", text=
+      " 执行反馈")
+    struct WebCommand_Response {
+      unitree_api::msg::ResponseHeader header;
+
+      string data;
+
+      sequence<uint8> binary;
+    };
+  };
+};

@@ -1,0 +1,4 @@
+# generated from rosidl_cmake/cmake/rosidl_cmake-extras.cmake.in
+
+set(unitree_interfaces_IDL_FILES "msg/Star.idl;msg/BmsCmd.idl;msg/BmsState.idl;msg/Cartisian.idl;msg/FootForce.idl;msg/Remote.idl;msg/IMU.idl;msg/Rgb.idl;msg/MotorCmd.idl;msg/MotorCmds.idl;msg/MotorState.idl;msg/MotorStates.idl;msg/GaitCmd.idl;msg/Obstacles.idl;msg/GaitState.idl;msg/RosgaitState.idl;msg/PcToImage.idl;msg/QtCommand.idl;msg/QtEdge.idl;msg/QtNode.idl")
+set(unitree_interfaces_INTERFACE_FILES "msg/Star.msg;msg/BmsCmd.msg;msg/BmsState.msg;msg/Cartisian.msg;msg/FootForce.msg;msg/Remote.msg;msg/IMU.msg;msg/Rgb.msg;msg/MotorCmd.msg;msg/MotorCmds.msg;msg/MotorState.msg;msg/MotorStates.msg;msg/GaitCmd.msg;msg/Obstacles.msg;msg/GaitState.msg;msg/RosgaitState.msg;msg/PcToImage.msg;msg/QtCommand.msg;msg/QtEdge.msg;msg/QtNode.msg")

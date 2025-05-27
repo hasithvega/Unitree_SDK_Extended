@@ -1,0 +1,14 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_interface/msg/NavState.msg
+// generated code does not contain a copyright notice
+
+
+module custom_interface {
+  module msg {
+    struct NavState {
+      string id;
+
+      string state;
+    };
+  };
+};

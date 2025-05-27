@@ -1,0 +1,15 @@
+<!-- example.launch.xml -->
+
+<launch>
+
+  <!-- include another launch file -->
+  <!-- <include file="$(find-pkg-share demo_nodes_cpp)/launch/topics/talker_listener.launch.py"/> -->
+  <node pkg="occ_grid_mapping" exec="CloudToScan" name="CloudToScan" output="screen">
+    <param from = "$(find-pkg-share occ_grid_mapping)/config/params.yaml"/>
+  </node>
+
+  <node pkg="occ_grid_mapping" exec="mapgrid" name="mapgrid" output="screen">
+    <param from = "$(find-pkg-share occ_grid_mapping)/config/params.yaml"/>
+  </node>
+
+</launch>

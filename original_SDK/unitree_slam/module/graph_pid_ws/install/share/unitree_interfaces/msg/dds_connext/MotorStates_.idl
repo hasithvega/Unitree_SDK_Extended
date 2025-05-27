@@ -1,0 +1,31 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from unitree_interfaces:msg/MotorStates.idl
+// generated code does not contain a copyright notice
+#include "unitree_interfaces/msg/dds_connext/MotorState_.idl"
+
+#ifndef __unitree_interfaces__msg__motor_states__idl__
+#define __unitree_interfaces__msg__motor_states__idl__
+
+
+module unitree_interfaces {
+
+module msg {
+
+module dds_ {
+
+
+struct MotorStates_ {
+unitree_interfaces::msg::dds_::MotorState_ motor_state_[20];
+
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module unitree_interfaces
+
+
+#endif  // __unitree_interfaces__msg__motor_states__idl__

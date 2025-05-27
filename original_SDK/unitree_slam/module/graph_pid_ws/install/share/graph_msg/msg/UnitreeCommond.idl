@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from graph_msg/msg/UnitreeCommond.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Int8.idl"
+#include "std_msgs/msg/String.idl"
+
+module graph_msg {
+  module msg {
+    @verbatim (language="comment", text=
+      "数据指令")
+    struct UnitreeCommond {
+      std_msgs::msg::String cmd;
+
+      @verbatim (language="comment", text=
+        "任务心跳")
+      std_msgs::msg::String seq;
+
+      @verbatim (language="comment", text=
+        "错误情况" "\n"
+        "0:目标点不在轨迹中 1:遇到障碍物无法重新规划,返回充电房 2:返回充电房也失败，完全无法规划")
+      std_msgs::msg::Int8 faild_flag;
+    };
+  };
+};

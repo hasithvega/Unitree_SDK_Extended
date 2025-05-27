@@ -1,0 +1,6 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/libbow.so
+Symlinking /unitree/module/Odometer_service/devel/lib/libsvo_online_loopclosing.so
+Symlinking /unitree/module/Odometer_service/devel/lib/svo_online_loopclosing/createvoc
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/svo_online_loopclosing.pc
+Symlinking /unitree/module/Odometer_service/devel/share/svo_online_loopclosing/cmake/svo_online_loopclosingConfig-version.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/svo_online_loopclosing/cmake/svo_online_loopclosingConfig.cmake

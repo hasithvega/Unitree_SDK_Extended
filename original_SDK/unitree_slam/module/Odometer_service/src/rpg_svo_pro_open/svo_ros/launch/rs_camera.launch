@@ -1,0 +1,20 @@
+<launch>
+
+  <node pkg="svo_ros" type="svo_node" name="svo" respawn="true" clear_params="true" output="screen">
+
+  <!-- Camera topic to subscribe to -->
+    <param name="cam0_topic" value="/camera/infra1/image_rect_raw" type="str" />
+
+  <!-- Camera calibration file -->
+    <param name="calib_file" value="$(find svo_ros)/param/calib/rs_camera_calib.yaml" type="str" />
+
+  <!-- Parameters -->
+    <rosparam file="$(find svo_ros)/param/rs_camera_param.yaml" />
+
+  <!-- Initial camera orientation, make it point downwards -->
+    <param name="init_rx" value="3.14" />
+    <param name="init_ry" value="0.00" />
+    <param name="init_rz" value="0.00" />
+  </node>
+
+</launch>

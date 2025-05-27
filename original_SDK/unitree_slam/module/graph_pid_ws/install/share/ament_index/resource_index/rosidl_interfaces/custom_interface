@@ -1,0 +1,8 @@
+msg/NavState.idl
+msg/NavState.msg
+msg/NavigationToPose.idl
+msg/NavigationToPose.msg
+msg/RechargeInfo.idl
+msg/RechargeInfo.msg
+msg/VirtualWall.idl
+msg/VirtualWall.msg

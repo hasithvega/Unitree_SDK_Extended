@@ -1,0 +1,3 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/glog_catkin.pc
+Symlinking /unitree/module/Odometer_service/devel/share/glog_catkin/cmake/glog_catkinConfig-version.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/glog_catkin/cmake/glog_catkinConfig.cmake

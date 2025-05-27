@@ -1,0 +1,14 @@
+source;share/QT_Server/hook/cmake_prefix_path.ps1
+source;share/QT_Server/hook/cmake_prefix_path.dsv
+source;share/QT_Server/hook/cmake_prefix_path.sh
+source;share/QT_Server/hook/ld_library_path_lib.ps1
+source;share/QT_Server/hook/ld_library_path_lib.dsv
+source;share/QT_Server/hook/ld_library_path_lib.sh
+source;share/QT_Server/hook/pythonpath.ps1
+source;share/QT_Server/hook/pythonpath.dsv
+source;share/QT_Server/hook/pythonpath.sh
+source;share/QT_Server/local_setup.bash
+source;share/QT_Server/local_setup.dsv
+source;share/QT_Server/local_setup.ps1
+source;share/QT_Server/local_setup.sh
+source;share/QT_Server/local_setup.zsh

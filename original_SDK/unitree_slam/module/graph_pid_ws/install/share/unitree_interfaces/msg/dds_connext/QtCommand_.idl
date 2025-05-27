@@ -1,0 +1,54 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from unitree_interfaces:msg/QtCommand.idl
+// generated code does not contain a copyright notice
+#include "std_msgs/msg/dds_connext/String_.idl"
+
+#ifndef __unitree_interfaces__msg__qt_command__idl__
+#define __unitree_interfaces__msg__qt_command__idl__
+
+
+module unitree_interfaces {
+
+module msg {
+
+module dds_ {
+
+
+struct QtCommand_ {
+octet command_;
+std_msgs::msg::dds_::String_ seq_;
+octet attribute_;
+sequence<unsigned short> floor_index_;
+
+sequence<unsigned short> pcdmap_index_;
+
+sequence<unsigned short> topomap_index_;
+
+sequence<unsigned short> node_edge_name_;
+
+float quaternion_x_;
+float quaternion_y_;
+float quaternion_z_;
+float quaternion_w_;
+float euler_roll_;
+float euler_pitch_;
+float euler_yaw_;
+float translation_x_;
+float translation_y_;
+float translation_z_;
+sequence<unsigned short> state_1_;
+
+sequence<float> state_2_;
+
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module unitree_interfaces
+
+
+#endif  // __unitree_interfaces__msg__qt_command__idl__

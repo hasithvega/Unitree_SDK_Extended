@@ -1,0 +1,49 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from unitree_interfaces/msg/QtCommand.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/String.idl"
+
+module unitree_interfaces {
+  module msg {
+    struct QtCommand {
+      uint8 command;
+
+      std_msgs::msg::String seq;
+
+      uint8 attribute;
+
+      sequence<uint16> floor_index;
+
+      sequence<uint16> pcdmap_index;
+
+      sequence<uint16> topomap_index;
+
+      sequence<uint16> node_edge_name;
+
+      float quaternion_x;
+
+      float quaternion_y;
+
+      float quaternion_z;
+
+      float quaternion_w;
+
+      float euler_roll;
+
+      float euler_pitch;
+
+      float euler_yaw;
+
+      float translation_x;
+
+      float translation_y;
+
+      float translation_z;
+
+      sequence<uint16> state_1;
+
+      sequence<float> state_2;
+    };
+  };
+};

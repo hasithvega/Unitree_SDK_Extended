@@ -1,0 +1,3 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/minkindr_conversions.pc
+Symlinking /unitree/module/Odometer_service/devel/share/minkindr_conversions/cmake/minkindr_conversionsConfig.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/minkindr_conversions/cmake/minkindr_conversionsConfig-version.cmake

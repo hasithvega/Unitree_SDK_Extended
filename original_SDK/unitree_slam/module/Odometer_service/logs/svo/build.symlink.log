@@ -1,0 +1,4 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/libsvo.so
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/svo.pc
+Symlinking /unitree/module/Odometer_service/devel/share/svo/cmake/svoConfig-version.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/svo/cmake/svoConfig.cmake

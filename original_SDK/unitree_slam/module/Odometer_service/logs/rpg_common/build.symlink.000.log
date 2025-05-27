@@ -1,0 +1,4 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/librpg_common.so
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/rpg_common.pc
+Symlinking /unitree/module/Odometer_service/devel/share/rpg_common/cmake/rpg_commonConfig.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/rpg_common/cmake/rpg_commonConfig-version.cmake
