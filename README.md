@@ -10,7 +10,11 @@ And also include some docs for the beginers developing with Unitree SDK2 and thi
 
 ## Fast setup
 
-Ah I'm going to off work, let me write it tomorrow.
+~~Ah I'm going to off work, let me write it tomorrow.~~
+
+Update 25.5.28
+
+Thanks for roomate in dormitory playing video games untill 7am. No power for doing this today. I need to rent my room this weekend.
 
 ## ToDo List
 
