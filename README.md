@@ -41,6 +41,28 @@ Since this project builds upon Unitree Technology's original SDK suite, it **doe
 * ❌Extended Libraries
 * ▶️FAQs
 
+## **Announcement**
+
+* Update 2025/5/29: Due to end-of-month warehouse management policies, our department is unable to borrow available robots for test. Currently, the new program cannot be tested temporarily, so I'll focus on advancing the documentation first.
+
+## **Contact Information**
+
+If there are any issues for this project, please raise them in the issue, don't ask for the official help. This project is not supported by Unitree.
+
+If you encounter any issues while using the robot/robotic dog, please utilize Unitree's [customer service platform](https://global-serviceconsole.unitree.com/), select **"Manual Consultation"**, and create a new ticket for assistance
+
+ ( *Note: Do not use "Complain" for non-experience-related issues. "Manual Consultation" includes a chat window for ongoing communication, whereas "Complain" does not. Both have the same internal response priority, but if your issue requires continuous discussion, you will still be advised to submit a ticket even if initially placed under "Complain."* ).
+
+Technical support operates from **9:00 AM to 9:00 PM (UTC+8)**, with responses typically starting around **9:30 AM** and concluding by **9:40 PM**. 
+
+*Rest assured, no ticket will be overlooked. If you haven’t received a reply, please wait patiently.*
+
+When the ticket interface displays **"Assigned technical support engineer [Name] for you"**, it means a support engineer has begun working on your issue. *They may not respond immediately, as some unprecedented problems require local reproduction and testing first.*
+
+If you believe the issue has been resolved, please inform the support team so they can **close the ticket**. Your cooperation in this process is greatly appreciated—it helps a lot.
+
+For **urgent issues**, please contact: **support@unitree.com**. When technical support reaches out via email, remember to **CC support@unitree.com** in your replies.
+
 ## ToDo List
 
 * [ ] Finish this readme.
