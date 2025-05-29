@@ -49,9 +49,9 @@ Since this project builds upon Unitree Technology's original SDK suite, it **doe
 
 If there are any issues for this project, please raise them in the issue, don't ask for the official help. This project is not supported by Unitree.
 
-If you encounter any issues while using the robot/robotic dog, please utilize Unitree's [customer service platform](https://global-serviceconsole.unitree.com/), select **"Manual Consultation"**, and create a new ticket for assistance
+If you encounter any issues while using the robot/robotic dog, please utilize Unitree's [customer service platform](https://global-serviceconsole.unitree.com/), select **"Manual Consultation"**, and create a new ticket for assistance.
 
- ( *Note: Do not use "Complain" for non-experience-related issues. "Manual Consultation" includes a chat window for ongoing communication, whereas "Complain" does not. Both have the same internal response priority, but if your issue requires continuous discussion, you will still be advised to submit a ticket even if initially placed under "Complain."* ).
+ ( *Note: Do not use "Complain" for non-experience-related issues. "Manual Consultation" includes a chat window for ongoing communication, whereas "Complain" does not. Both have the same internal response priority, but if your issue requires continuous discussion, you will still be advised to submit a ticket even if initially placed under "Complain."* )
 
 Technical support operates from **9:00 AM to 9:00 PM (UTC+8)**, with responses typically starting around **9:30 AM** and concluding by **9:40 PM**. 
 
