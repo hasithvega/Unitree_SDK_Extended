@@ -1,20 +1,45 @@
 ## Unitree SDK2 Extended
 
-Hi :)
+This project serves as an extension package for the Unitree SDKs Family, built upon Unitree SDK2, Unitree SLAM, Unitree Z1 SDK, and others. Please note this repository is unofficial and its contents are not officially supported by Unitree.
 
-This project is an extend for the Unitree SDK2 (DDS version) and the SLAM package. (Maybe more in the future), not for a official version.
+The project includes the following components:
 
-All the functions are based on the Unitree SDK2, so you might install the SDK first, for the beginers to develop the Unitree robots like G1/Go2/B2 that support develop by [Unitree SDK2](https://github.com/unitreerobotics/unitree_sdk2)
+* Refactoring/repackaging certain elements from Unitree SDKs into more user-friendly formats (i.e., sample extension packages)
+* Bundling frequently used extension packages into libraries (this will be gradually implemented)
+* Creating explanatory documentation and development guides for some sample codes in Unitree SDKs
+* Providing additional explanations for common development issues
 
-And also include some docs for the beginers developing with Unitree SDK2 and this extend.
+This project currently/plans to support the following Unitree devices:
+**Unitree G1, H1, Go2, B2, D1, and Z1.**
+*Note: Basic models (Air/Pro variants) across all devices are **not** supported.*
+If development progresses smoothly, support may extend to **L1, L2**, and some older devices like **K1 and AlienGo**.
 
-## Fast setup
+Since this project builds upon Unitree Technology's original SDK suite, it **does not support** any devices that cannot be modified or reprogrammed. Additionally, **no assistance will be provided for jailbreaking or firmware cracking.** Your understanding is appreciated.
 
-~~Ah I'm going to off work, let me write it tomorrow.~~
+## Current State
 
-Update 25.5.28
+▶️On Going ✅Finished and checked ⚠️Finished but haven't tested ❌Haven't create the folder
 
-Thanks for roomate in dormitory playing video games untill 7am. No power for doing this today. I need to rent my room this weekend.
+* ▶️Docs
+  * ▶️G1
+    * ▶️High Level
+      * ▶️Locomotion
+      * ✅Arm
+    * ❌Low Level
+  * ❌Go2
+  * ❌... (More Models)
+* ▶️Extended Example
+  * ▶️G1
+    * ✅High Level
+      * ✅Locomotion(g1_global_highlevel.cpp)
+      * ✅Arm(g1_global_armcontroller.cpp)
+      * ✅Combination between Locomotion and arm(g1_loco_with_arm_example.cpp)
+    * ▶️Low Level
+      * ⚠️Low level universal controller(g1_low_universal_example.cpp)
+  * ❌Go2
+  * ❌... (More Models)
+* ❌Extended Libraries
+* ▶️FAQs
 
 ## ToDo List
 
