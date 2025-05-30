@@ -4,19 +4,7 @@ intros...
 
 ## Announcement
 
-For the upgrading information of firmware 1.1.7 about developing.
-
-|         | DDS SDK                                                                                           | Python | ROS2 |
-| ------- | ------------------------------------------------------------------------------------------------- | ------ | ---- |
-| Support | ✅New interface[here](https://support.unitree.com/home/en/developer/Motion_Services_Interface_V2.0). | ❌     | ❌   |
-
-More informations about the module not supported by new firmware.
-
-* Adjust the body height.
-* Remote control on the App (Vertical-screen operable controller in "Functions")
-* Auto entering locking mode when you carry the dog in arm. (Beware of robotic dog leg kicks to avoid injury)
-* Aruco Recharge service interface
-
+For Go2, currently 1.1.7 firmware is not supported for SLAM package.
 
 ## Unsorted
 
