@@ -4,7 +4,19 @@ intros...
 
 ## Announcement
 
-...
+For the upgrading information of firmware 1.1.7 about developing.
+
+|         | DDS SDK                                                                                           | Python | ROS2 |
+| ------- | ------------------------------------------------------------------------------------------------- | ------ | ---- |
+| Support | ✅New interface[here](https://support.unitree.com/home/en/developer/Motion_Services_Interface_V2.0). | ❌     | ❌   |
+
+More informations about the module not supported by new firmware.
+
+* Adjust the body height.
+* Remote control on the App (Vertical-screen operable controller in "Functions")
+* Auto entering locking mode when you carry the dog in arm. (Beware of robotic dog leg kicks to avoid injury)
+* Aruco Recharge service interface
+
 
 ## Unsorted
 
@@ -24,3 +36,7 @@ The SLAM demo is designed for the normal mode. There's been a long time since th
     PID_y_KI: 0.004 # Change this one
     PID_y_KD: 1.0
 ```
+
+### Q: Can I install L2 LiDAR on the robot dog with L1 installed on it?
+
+Only support firmware >=1.1.7.
