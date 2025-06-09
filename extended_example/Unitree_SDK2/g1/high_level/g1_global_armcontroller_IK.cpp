@@ -2,6 +2,8 @@
 #include <chrono>
 #include <iostream>
 #include <thread>
+#include <eigen3/Eigen/Dense>
+#include <cmath>
 
 #include <unitree/idl/hg/LowCmd_.hpp>
 #include <unitree/idl/hg/LowState_.hpp>
@@ -51,7 +53,6 @@ enum JointIndex {
     kRightWristPitch,
     kRightWristYaw,
 
-    // These joints are used to make motion unit (High Level) to know that it cannot control the motors on arm because the users are going to control the arm by themselfs.
     kNotUsedJoint,
     kNotUsedJoint1,
     kNotUsedJoint2,
@@ -112,6 +113,41 @@ public:
         target_pos_ = {0.f, kPi_2,  0.f, kPi_2, 0.f, 0.f, 0.f,
                        0.f, -kPi_2, 0.f, kPi_2, 0.f, 0.f, 0.f, 
                        0, 0, 0};
+
+        // Initialize arm lengths based on URDF
+        left_arm_lengths_ = {
+            0.038,    // shoulder_roll to shoulder_yaw
+            0.1032,   // shoulder_yaw to elbow
+            0.080518, // elbow to wrist_roll
+            0.100,    // wrist_roll to wrist_pitch
+            0.038,    // wrist_pitch to wrist_yaw
+            0.046     // wrist_yaw to hand
+        };
+
+        right_arm_lengths_ = left_arm_lengths_; // Symmetrical arms
+
+        // Initialize DH parameters for left arm
+        left_arm_dh_ = {
+            // alpha, a, d, theta_offset
+            {0, 0, 0, 0},                    // shoulder_pitch
+            {-kPi_2, 0, 0.038, 0},           // shoulder_roll
+            {kPi_2, 0, 0.1032, 0},           // shoulder_yaw
+            {0, 0, 0.080518, 0},             // elbow
+            {-kPi_2, 0, 0.100, 0},           // wrist_roll
+            {kPi_2, 0, 0.038, 0},            // wrist_pitch
+            {0, 0, 0.046, 0}                 // wrist_yaw
+        };
+
+        // Right arm DH parameters (mirrored)
+        right_arm_dh_ = {
+            {0, 0, 0, 0},                    // shoulder_pitch
+            {kPi_2, 0, 0.038, 0},            // shoulder_roll
+            {kPi_2, 0, 0.1032, 0},           // shoulder_yaw
+            {0, 0, 0.080518, 0},             // elbow
+            {kPi_2, 0, 0.100, 0},            // wrist_roll
+            {kPi_2, 0, 0.038, 0},            // wrist_pitch
+            {0, 0, 0.046, 0}                 // wrist_yaw
+        };
     }
 
     // Initialize arms to default position
@@ -181,6 +217,136 @@ public:
         return true;
     }
 
+    // Move arms to target end-effector position using IK
+    bool MoveArmsToTargetEE(const Eigen::Vector3f& left_target, const Eigen::Vector3f& right_target, 
+                           float duration = 5.0f) {
+        std::cout << "Moving arms to target end-effector positions..." << std::endl;
+
+        // Get current joint positions
+        std::array<float, 17> current_jpos;
+        for (int i = 0; i < arm_joints_.size(); ++i) {
+            current_jpos.at(i) = state_msg_.motor_state().at(arm_joints_.at(i)).q();
+        }
+
+        // Solve IK for left and right arms
+        std::array<float, 7> left_joints = SolveIK(left_target, true);
+        std::array<float, 7> right_joints = SolveIK(right_target, false);
+
+        // Create target positions array
+        std::array<float, 17> target_pos;
+        for (int i = 0; i < 7; ++i) {
+            target_pos[i] = left_joints[i];
+            target_pos[i+7] = right_joints[i];
+        }
+        // Keep waist joints at current position
+        for (int i = 14; i < 17; ++i) {
+            target_pos[i] = current_jpos[i];
+        }
+
+        // Move using joint space trajectory
+        return MoveArmsToPosition(target_pos, duration);
+    }
+
+    // Solve inverse kinematics for arm
+    std::array<float, 7> SolveIK(const Eigen::Vector3f& target, bool is_left_arm, 
+                                const std::array<float, 7>* initial_guess = nullptr) {
+        // Simple analytical IK for 3DOF arm (shoulder_pitch, shoulder_roll, elbow)
+        // Wrist joints are set to default positions
+        
+        std::array<float, 7> joint_positions;
+        
+        if (is_left_arm) {
+            // For left arm
+            float shoulder_pitch, shoulder_roll, elbow;
+            
+            // Distance from shoulder to target in x-z plane
+            float dx = target.x();
+            float dz = target.z() - left_arm_lengths_[0]; // Adjust for shoulder height
+            
+            // Distance in x-z plane
+            float distance = sqrt(dx*dx + dz*dz);
+            
+            // Arm lengths (shoulder to elbow + elbow to wrist)
+            float L1 = left_arm_lengths_[1] + left_arm_lengths_[2];
+            float L2 = left_arm_lengths_[3] + left_arm_lengths_[4] + left_arm_lengths_[5];
+            
+            // Check if target is reachable
+            if (distance > (L1 + L2) || distance < fabs(L1 - L2)) {
+                std::cerr << "Target position unreachable!" << std::endl;
+                return joint_positions;
+            }
+            
+            // Solve for elbow angle using law of cosines
+            float cos_elbow = (distance*distance - L1*L1 - L2*L2) / (2 * L1 * L2);
+            elbow = acos(cos_elbow);
+            
+            // Solve for shoulder angles
+            float alpha = atan2(dz, dx);
+            float beta = acos((L1*L1 + distance*distance - L2*L2) / (2 * L1 * distance));
+            
+            shoulder_pitch = alpha - beta;
+            shoulder_roll = atan2(target.y(), distance);
+            
+            // Set joint positions
+            joint_positions[0] = shoulder_pitch;
+            joint_positions[1] = shoulder_roll;
+            joint_positions[2] = 0; // shoulder_yaw (fixed for simple IK)
+            joint_positions[3] = elbow;
+            joint_positions[4] = 0; // wrist_roll (default)
+            joint_positions[5] = 0; // wrist_pitch (default)
+            joint_positions[6] = 0; // wrist_yaw (default)
+        } else {
+            // For right arm (similar but mirrored)
+            float shoulder_pitch, shoulder_roll, elbow;
+            
+            float dx = target.x();
+            float dz = target.z() - right_arm_lengths_[0];
+            
+            float distance = sqrt(dx*dx + dz*dz);
+            float L1 = right_arm_lengths_[1] + right_arm_lengths_[2];
+            float L2 = right_arm_lengths_[3] + right_arm_lengths_[4] + right_arm_lengths_[5];
+            
+            if (distance > (L1 + L2) || distance < fabs(L1 - L2)) {
+                std::cerr << "Target position unreachable!" << std::endl;
+                return joint_positions;
+            }
+            
+            float cos_elbow = (distance*distance - L1*L1 - L2*L2) / (2 * L1 * L2);
+            elbow = acos(cos_elbow);
+            
+            float alpha = atan2(dz, dx);
+            float beta = acos((L1*L1 + distance*distance - L2*L2) / (2 * L1 * distance));
+            
+            shoulder_pitch = alpha - beta;
+            shoulder_roll = -atan2(target.y(), distance); // Mirrored
+            
+            joint_positions[0] = shoulder_pitch;
+            joint_positions[1] = shoulder_roll;
+            joint_positions[2] = 0;
+            joint_positions[3] = elbow;
+            joint_positions[4] = 0;
+            joint_positions[5] = 0;
+            joint_positions[6] = 0;
+        }
+        
+        return joint_positions;
+    }
+
+    // Generate S-curve trajectory
+    std::vector<float> GenerateSTrajectory(float start, float end, int steps) {
+        std::vector<float> trajectory;
+        trajectory.reserve(steps);
+        
+        for (int i = 0; i < steps; ++i) {
+            float t = static_cast<float>(i) / (steps - 1);
+            // S-curve easing function
+            float s = 0.5f * (1.0f - cos(t * kPi));
+            trajectory.push_back(start + (end - start) * s);
+        }
+        
+        return trajectory;
+    }
+
     // Stop arm control gradually
     bool StopControl(float stop_time = 2.0f) {
         std::cout << "Stopping arm control..." << std::endl;
@@ -247,6 +413,12 @@ private:
     std::array<float, 17> init_pos_;
     std::array<float, 17> target_pos_;
 
+    // Arm parameters
+    std::vector<float> left_arm_lengths_;
+    std::vector<float> right_arm_lengths_;
+    std::vector<std::tuple<float, float, float, float>> left_arm_dh_; // alpha, a, d, theta_offset
+    std::vector<std::tuple<float, float, float, float>> right_arm_dh_;
+
     float kp_;
     float kd_;
     float control_dt_;
@@ -268,25 +440,23 @@ int main(int argc, char const *argv[]) {
     std::cin.get();
     arm_controller.InitializeArms();
 
-    // Wait for user input to start movement
-    std::cout << "Press ENTER to move arms up..." << std::endl;
+    // Test IK control
+    std::cout << "Press ENTER to move arms using IK..." << std::endl;
     std::cin.get();
     
-    // Move arms to target (up) position
-    std::array<float, 17> target_up = {0.f, kPi_2,  0.f, kPi_2, 0.f, 0.f, 0.f,
-                                      0.f, -kPi_2, 0.f, kPi_2, 0.f, 0.f, 0.f, 
-                                      0, 0, 0};
-    arm_controller.MoveArmsToPosition(target_up);
+    // Define target positions for left and right end-effectors
+    Eigen::Vector3f left_target(0.3f, 0.2f, 0.1f);  // x, y, z in meters
+    Eigen::Vector3f right_target(0.3f, -0.2f, 0.1f); // mirrored for right arm
+    
+    arm_controller.MoveArmsToTargetEE(left_target, right_target);
 
-    // Wait for user input to move arms down
-    std::cout << "Press ENTER to move arms down..." << std::endl;
+    // Move back to initial position
+    std::cout << "Press ENTER to move arms back to initial position..." << std::endl;
     std::cin.get();
     
-    // Move arms back to initial (down) position
-    std::array<float, 17> target_down = {0, 0, 0, 0, 0, 0, 0,
-                                        0, 0, 0, 0, 0, 0, 0,
-                                        0, 0, 0};
-    arm_controller.MoveArmsToPosition(target_down);
+    Eigen::Vector3f left_home(0.1f, 0.1f, -0.1f);
+    Eigen::Vector3f right_home(0.1f, -0.1f, -0.1f);
+    arm_controller.MoveArmsToTargetEE(left_home, right_home);
 
     // Stop control
     std::cout << "Press ENTER to stop control..." << std::endl;
