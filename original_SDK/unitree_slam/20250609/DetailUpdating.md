@@ -30,6 +30,7 @@ Main changes at \module\graph_pid_ws\config_files & \module\graph_pid_ws\install
 * install\lib\go2_control_by_sdk\python3.8\site-packages
 * install\share\dog_control\launch\dogcontrol.launch.py
   * Add a new parament to send_cmd: "100".
+  * 100 (smart, recommended, high stability, gait is not very good-looking), 2010 (AI classic gait, recommended, gait is good-looking), 1015 (traditional, not recommended, unstable)
 * install\share\task\rviz2\costmap.rviz
   * Add /Path1 into Property Tree Width
   * Tree Height change from 363 -> 719
