@@ -1,0 +1,6 @@
+rpg_svo_pro_open/vikit/vikit_py
+/unitree/module/Odometer_service/devel/.private/vikit_py/cmake.lock /unitree/module/Odometer_service/devel/./cmake.lock
+/unitree/module/Odometer_service/devel/.private/vikit_py/lib/pkgconfig/vikit_py.pc /unitree/module/Odometer_service/devel/lib/pkgconfig/vikit_py.pc
+/unitree/module/Odometer_service/devel/.private/vikit_py/lib/python3/dist-packages/vikit_py/__init__.py /unitree/module/Odometer_service/devel/lib/python3/dist-packages/vikit_py/__init__.py
+/unitree/module/Odometer_service/devel/.private/vikit_py/share/vikit_py/cmake/vikit_pyConfig.cmake /unitree/module/Odometer_service/devel/share/vikit_py/cmake/vikit_pyConfig.cmake
+/unitree/module/Odometer_service/devel/.private/vikit_py/share/vikit_py/cmake/vikit_pyConfig-version.cmake /unitree/module/Odometer_service/devel/share/vikit_py/cmake/vikit_pyConfig-version.cmake

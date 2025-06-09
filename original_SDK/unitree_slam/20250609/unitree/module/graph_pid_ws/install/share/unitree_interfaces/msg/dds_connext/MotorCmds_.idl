@@ -1,0 +1,31 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from unitree_interfaces:msg/MotorCmds.idl
+// generated code does not contain a copyright notice
+#include "unitree_interfaces/msg/dds_connext/MotorCmd_.idl"
+
+#ifndef __unitree_interfaces__msg__motor_cmds__idl__
+#define __unitree_interfaces__msg__motor_cmds__idl__
+
+
+module unitree_interfaces {
+
+module msg {
+
+module dds_ {
+
+
+struct MotorCmds_ {
+unitree_interfaces::msg::dds_::MotorCmd_ motor_cmd_[20];
+
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module unitree_interfaces
+
+
+#endif  // __unitree_interfaces__msg__motor_cmds__idl__

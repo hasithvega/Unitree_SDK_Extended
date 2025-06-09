@@ -1,0 +1,14 @@
+source;share/merger_map/hook/cmake_prefix_path.ps1
+source;share/merger_map/hook/cmake_prefix_path.dsv
+source;share/merger_map/hook/cmake_prefix_path.sh
+source;share/merger_map/hook/ld_library_path_lib.ps1
+source;share/merger_map/hook/ld_library_path_lib.dsv
+source;share/merger_map/hook/ld_library_path_lib.sh
+source;share/merger_map/hook/pythonpath.ps1
+source;share/merger_map/hook/pythonpath.dsv
+source;share/merger_map/hook/pythonpath.sh
+source;share/merger_map/local_setup.bash
+source;share/merger_map/local_setup.dsv
+source;share/merger_map/local_setup.ps1
+source;share/merger_map/local_setup.sh
+source;share/merger_map/local_setup.zsh

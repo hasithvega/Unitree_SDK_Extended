@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_interface/msg/VirtualWall.msg
+// generated code does not contain a copyright notice
+
+
+module custom_interface {
+  module msg {
+    struct VirtualWall {
+      int64 wall_type;
+
+      double frame_start_x;
+
+      double frame_start_y;
+
+      double frame_end_x;
+
+      double frame_end_y;
+
+      int64 threshold;
+    };
+  };
+};

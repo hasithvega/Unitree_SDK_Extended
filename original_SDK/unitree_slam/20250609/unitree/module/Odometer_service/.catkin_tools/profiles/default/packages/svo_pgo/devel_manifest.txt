@@ -1,0 +1,7 @@
+rpg_svo_pro_open/svo_pgo
+/unitree/module/Odometer_service/devel/.private/svo_pgo/cmake.lock /unitree/module/Odometer_service/devel/./cmake.lock
+/unitree/module/Odometer_service/devel/.private/svo_pgo/lib/libsvo_pgo.so /unitree/module/Odometer_service/devel/lib/libsvo_pgo.so
+/unitree/module/Odometer_service/devel/.private/svo_pgo/lib/svo_pgo/test_pgo /unitree/module/Odometer_service/devel/lib/svo_pgo/test_pgo
+/unitree/module/Odometer_service/devel/.private/svo_pgo/lib/pkgconfig/svo_pgo.pc /unitree/module/Odometer_service/devel/lib/pkgconfig/svo_pgo.pc
+/unitree/module/Odometer_service/devel/.private/svo_pgo/share/svo_pgo/cmake/svo_pgoConfig.cmake /unitree/module/Odometer_service/devel/share/svo_pgo/cmake/svo_pgoConfig.cmake
+/unitree/module/Odometer_service/devel/.private/svo_pgo/share/svo_pgo/cmake/svo_pgoConfig-version.cmake /unitree/module/Odometer_service/devel/share/svo_pgo/cmake/svo_pgoConfig-version.cmake

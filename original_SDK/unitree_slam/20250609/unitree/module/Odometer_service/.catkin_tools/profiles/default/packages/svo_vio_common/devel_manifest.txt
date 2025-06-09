@@ -1,0 +1,6 @@
+rpg_svo_pro_open/svo_vio_common
+/unitree/module/Odometer_service/devel/.private/svo_vio_common/cmake.lock /unitree/module/Odometer_service/devel/./cmake.lock
+/unitree/module/Odometer_service/devel/.private/svo_vio_common/lib/libsvo_vio_common.so /unitree/module/Odometer_service/devel/lib/libsvo_vio_common.so
+/unitree/module/Odometer_service/devel/.private/svo_vio_common/lib/pkgconfig/svo_vio_common.pc /unitree/module/Odometer_service/devel/lib/pkgconfig/svo_vio_common.pc
+/unitree/module/Odometer_service/devel/.private/svo_vio_common/share/svo_vio_common/cmake/svo_vio_commonConfig.cmake /unitree/module/Odometer_service/devel/share/svo_vio_common/cmake/svo_vio_commonConfig.cmake
+/unitree/module/Odometer_service/devel/.private/svo_vio_common/share/svo_vio_common/cmake/svo_vio_commonConfig-version.cmake /unitree/module/Odometer_service/devel/share/svo_vio_common/cmake/svo_vio_commonConfig-version.cmake

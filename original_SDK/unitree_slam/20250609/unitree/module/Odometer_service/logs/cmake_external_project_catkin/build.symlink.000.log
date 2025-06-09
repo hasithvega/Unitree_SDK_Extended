@@ -1,0 +1,4 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/cmake_external_project_catkin.pc
+Symlinking /unitree/module/Odometer_service/devel/share/cmake_external_project_catkin/cmake/cmake_external_project_catkinConfig.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/cmake_external_project_catkin/cmake/cmake_external_project_catkinConfig-version.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/cmake_external_project_catkin/cmake/cmake_external_project_catkin-extras.cmake

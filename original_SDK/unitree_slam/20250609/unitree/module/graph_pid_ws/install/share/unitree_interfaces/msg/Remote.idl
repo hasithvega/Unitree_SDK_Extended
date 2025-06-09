@@ -1,0 +1,13 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from unitree_interfaces/msg/Remote.msg
+// generated code does not contain a copyright notice
+
+
+module unitree_interfaces {
+  module msg {
+    typedef uint8 uint8__40[40];
+    struct Remote {
+      uint8__40 remote_data;
+    };
+  };
+};

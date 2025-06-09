@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/unitree/module/Odometer_service/build/dbow2_catkin/CMakeFiles/dbow2_src"
+		},
+		{
+			"file" : "/unitree/module/Odometer_service/build/dbow2_catkin/CMakeFiles/dbow2_src.rule"
+		},
+		{
+			"file" : "/unitree/module/Odometer_service/build/dbow2_catkin/CMakeFiles/dbow2_src-complete.rule"
+		},
+		{
+			"file" : "/unitree/module/Odometer_service/build/dbow2_catkin/dbow2_src-prefix/src/dbow2_src-stamp/dbow2_src-install.rule"
+		},
+		{
+			"file" : "/unitree/module/Odometer_service/build/dbow2_catkin/dbow2_src-prefix/src/dbow2_src-stamp/dbow2_src-mkdir.rule"
+		},
+		{
+			"file" : "/unitree/module/Odometer_service/build/dbow2_catkin/dbow2_src-prefix/src/dbow2_src-stamp/dbow2_src-download.rule"
+		},
+		{
+			"file" : "/unitree/module/Odometer_service/build/dbow2_catkin/dbow2_src-prefix/src/dbow2_src-stamp/dbow2_src-update.rule"
+		},
+		{
+			"file" : "/unitree/module/Odometer_service/build/dbow2_catkin/dbow2_src-prefix/src/dbow2_src-stamp/dbow2_src-patch.rule"
+		},
+		{
+			"file" : "/unitree/module/Odometer_service/build/dbow2_catkin/dbow2_src-prefix/src/dbow2_src-stamp/dbow2_src-configure.rule"
+		},
+		{
+			"file" : "/unitree/module/Odometer_service/build/dbow2_catkin/dbow2_src-prefix/src/dbow2_src-stamp/dbow2_src-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"dbow2_src"
+		],
+		"name" : "dbow2_src"
+	}
+}

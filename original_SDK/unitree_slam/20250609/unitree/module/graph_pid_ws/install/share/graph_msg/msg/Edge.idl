@@ -1,0 +1,51 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from graph_msg/msg/Edge.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Float32MultiArray.idl"
+
+module graph_msg {
+  module msg {
+    @verbatim (language="comment", text=
+      "边名称序列")
+    struct Edge {
+      sequence<uint16> edge_name;
+
+      @verbatim (language="comment", text=
+        "起始点名称序列和终止点名称序列")
+      sequence<uint16> start_node_name;
+
+      sequence<uint16> end_node_name;
+
+      @verbatim (language="comment", text=
+        "边的长度序列")
+      sequence<float> edge_length;
+
+      @verbatim (language="comment", text=
+        "狗步态信息 0:普通行走 3:爬楼梯")
+      sequence<uint16> dog_stats;
+
+      @verbatim (language="comment", text=
+        "狗正反走状态信息 0:普通行走 1:允许倒着走")
+      sequence<uint16> dog_back_stats;
+
+      @verbatim (language="comment", text=
+        "狗的速度")
+      sequence<float> dog_speed;
+
+      @verbatim (language="comment", text=
+        "边的方向属性")
+      sequence<uint16> edge_state;
+
+      sequence<float> edge_state_1;
+
+      sequence<uint16> edge_state_2;
+
+      sequence<uint16> edge_state_3;
+
+      sequence<uint16> edge_state_4;
+
+      sequence<std_msgs::msg::Float32MultiArray> edge_state_list;
+    };
+  };
+};

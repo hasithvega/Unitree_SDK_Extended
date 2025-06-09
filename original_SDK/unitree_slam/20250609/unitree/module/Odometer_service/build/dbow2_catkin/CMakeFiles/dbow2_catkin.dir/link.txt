@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libdbow2_catkin.so -o /unitree/module/Odometer_service/devel/.private/dbow2_catkin/lib/libdbow2_catkin.so CMakeFiles/dbow2_catkin.dir/src/dependency_tracker.cc.o   -L/unitree/module/Odometer_service/devel/.private/dbow2_catkin/lib  -Wl,-rpath,/unitree/module/Odometer_service/devel/.private/dbow2_catkin/lib: -lDBoW2 

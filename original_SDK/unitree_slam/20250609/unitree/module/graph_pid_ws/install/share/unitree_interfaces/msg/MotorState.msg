@@ -1,0 +1,9 @@
+uint8 mode
+int8 temperature
+float32 q
+float32 dq
+float32 ddq
+float32 torque_estimated
+float32 q_raw
+float32 dq_raw
+float32 ddq_raw

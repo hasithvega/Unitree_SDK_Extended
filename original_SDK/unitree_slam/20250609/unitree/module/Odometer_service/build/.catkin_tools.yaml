@@ -1,0 +1,6 @@
+devel_space: /unitree/module/Odometer_service/devel
+install: false
+install_space: /unitree/module/Odometer_service/install
+profile: default
+source_space: /unitree/module/Odometer_service/src
+workspace: /unitree/module/Odometer_service

@@ -1,0 +1,4 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/libsvo_ceres_backend.so
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/svo_ceres_backend.pc
+Symlinking /unitree/module/Odometer_service/devel/share/svo_ceres_backend/cmake/svo_ceres_backendConfig-version.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/svo_ceres_backend/cmake/svo_ceres_backendConfig.cmake

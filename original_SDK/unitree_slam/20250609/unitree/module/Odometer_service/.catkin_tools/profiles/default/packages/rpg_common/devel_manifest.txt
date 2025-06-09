@@ -1,0 +1,6 @@
+rpg_svo_pro_open/rpg_common
+/unitree/module/Odometer_service/devel/.private/rpg_common/cmake.lock /unitree/module/Odometer_service/devel/./cmake.lock
+/unitree/module/Odometer_service/devel/.private/rpg_common/lib/librpg_common.so /unitree/module/Odometer_service/devel/lib/librpg_common.so
+/unitree/module/Odometer_service/devel/.private/rpg_common/lib/pkgconfig/rpg_common.pc /unitree/module/Odometer_service/devel/lib/pkgconfig/rpg_common.pc
+/unitree/module/Odometer_service/devel/.private/rpg_common/share/rpg_common/cmake/rpg_commonConfig.cmake /unitree/module/Odometer_service/devel/share/rpg_common/cmake/rpg_commonConfig.cmake
+/unitree/module/Odometer_service/devel/.private/rpg_common/share/rpg_common/cmake/rpg_commonConfig-version.cmake /unitree/module/Odometer_service/devel/share/rpg_common/cmake/rpg_commonConfig-version.cmake

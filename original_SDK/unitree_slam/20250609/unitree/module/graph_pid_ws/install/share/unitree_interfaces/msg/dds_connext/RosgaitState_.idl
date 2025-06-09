@@ -1,0 +1,44 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from unitree_interfaces:msg/RosgaitState.idl
+// generated code does not contain a copyright notice
+
+#ifndef __unitree_interfaces__msg__rosgait_state__idl__
+#define __unitree_interfaces__msg__rosgait_state__idl__
+
+
+module unitree_interfaces {
+
+module msg {
+
+module dds_ {
+
+
+struct RosgaitState_ {
+octet mode_;
+octet gait_type_;
+float foot_raise_height_;
+float body_height_;
+float position_[3];
+
+float velocity_[3];
+
+float yaw_speed_;
+float quaternion_[4];
+
+float gyroscope_[3];
+
+float accelerometer_[3];
+
+octet temperature_;
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module unitree_interfaces
+
+
+#endif  // __unitree_interfaces__msg__rosgait_state__idl__

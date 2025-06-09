@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from unitree_interfaces/msg/MotorState.msg
+// generated code does not contain a copyright notice
+
+
+module unitree_interfaces {
+  module msg {
+    struct MotorState {
+      uint8 mode;
+
+      int8 temperature;
+
+      float q;
+
+      float dq;
+
+      float ddq;
+
+      float torque_estimated;
+
+      float q_raw;
+
+      float dq_raw;
+
+      float ddq_raw;
+    };
+  };
+};

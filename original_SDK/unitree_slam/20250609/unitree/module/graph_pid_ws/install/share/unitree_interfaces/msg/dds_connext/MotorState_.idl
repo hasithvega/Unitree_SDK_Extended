@@ -1,0 +1,37 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from unitree_interfaces:msg/MotorState.idl
+// generated code does not contain a copyright notice
+
+#ifndef __unitree_interfaces__msg__motor_state__idl__
+#define __unitree_interfaces__msg__motor_state__idl__
+
+
+module unitree_interfaces {
+
+module msg {
+
+module dds_ {
+
+
+struct MotorState_ {
+octet mode_;
+octet temperature_;
+float q_;
+float dq_;
+float ddq_;
+float torque_estimated_;
+float q_raw_;
+float dq_raw_;
+float ddq_raw_;
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module unitree_interfaces
+
+
+#endif  // __unitree_interfaces__msg__motor_state__idl__

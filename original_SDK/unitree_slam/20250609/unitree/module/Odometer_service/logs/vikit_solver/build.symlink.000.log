@@ -1,0 +1,4 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/libvikit_solver.so
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/vikit_solver.pc
+Symlinking /unitree/module/Odometer_service/devel/share/vikit_solver/cmake/vikit_solverConfig-version.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/vikit_solver/cmake/vikit_solverConfig.cmake

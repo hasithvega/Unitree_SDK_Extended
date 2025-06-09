@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from graph_msg/srv/Astarcal.srv
+// generated code does not contain a copyright notice
+
+#include "graph_msg/msg/Node.idl"
+
+module graph_msg {
+  module srv {
+    @verbatim (language="comment", text=
+      "起始点和当前边信息")
+    struct Astarcal_Request {
+      graph_msg::msg::Node node;
+
+      int8 floor_index;
+    };
+    @verbatim (language="comment", text=
+      "返回权重")
+    struct Astarcal_Response {
+      sequence<float> weight;
+
+      int8 floor_index_cb;
+    };
+  };
+};

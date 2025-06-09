@@ -1,0 +1,32 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from unitree_interfaces:msg/QtEdge.idl
+// generated code does not contain a copyright notice
+#include "graph_msg/msg/dds_connext/Edge_.idl"
+#include "std_msgs/msg/dds_connext/String_.idl"
+
+#ifndef __unitree_interfaces__msg__qt_edge__idl__
+#define __unitree_interfaces__msg__qt_edge__idl__
+
+
+module unitree_interfaces {
+
+module msg {
+
+module dds_ {
+
+
+struct QtEdge_ {
+std_msgs::msg::dds_::String_ seq_;
+graph_msg::msg::dds_::Edge_ edge_;
+
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module unitree_interfaces
+
+
+#endif  // __unitree_interfaces__msg__qt_edge__idl__

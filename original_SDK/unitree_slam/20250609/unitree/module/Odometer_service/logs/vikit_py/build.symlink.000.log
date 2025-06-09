@@ -1,0 +1,4 @@
+Symlinking /unitree/module/Odometer_service/devel/lib/pkgconfig/vikit_py.pc
+Symlinking /unitree/module/Odometer_service/devel/lib/python3/dist-packages/vikit_py/__init__.py
+Symlinking /unitree/module/Odometer_service/devel/share/vikit_py/cmake/vikit_pyConfig.cmake
+Symlinking /unitree/module/Odometer_service/devel/share/vikit_py/cmake/vikit_pyConfig-version.cmake
