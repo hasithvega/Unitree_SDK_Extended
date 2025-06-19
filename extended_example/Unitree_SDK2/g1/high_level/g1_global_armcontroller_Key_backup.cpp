@@ -155,51 +155,6 @@ public:
         // Initialize keyboard control
         keyboard_step_size_ = 0.01f; // 1 cm per step
         controlled_arm_ = 'b'; // 'b' for both, 'l' for left, 'r' for right
-
-        // Initialize joint limits from configuration file
-        joint_limits_ = {
-            // Left leg
-            {-2.5307f, 2.8798f},    // kLeftHipPitch
-            {-0.5236f, 2.9671f},     // kLeftHipRoll
-            {-2.7576f, 2.7576f},     // kLeftHipYaw
-            {-0.087267f, 2.8798f},   // kLeftKnee
-            {-0.87267f, 0.5236f},    // kLeftAnkle
-            {-0.2618f, 0.2618f},      // kLeftAnkleRoll
-            
-            // Right leg
-            {-2.5307f, 2.8798f},     // kRightHipPitch
-            {-2.9671f, 0.5236f},      // kRightHipRoll
-            {-2.7576f, 2.7576f},      // kRightHipYaw
-            {-0.087267f, 2.8798f},    // kRightKnee
-            {-0.87267f, 0.5236f},     // kRightAnkle
-            {-0.2618f, 0.2618f},       // kRightAnkleRoll
-            
-            // Waist
-            {-2.618f, 2.618f},        // kWaistYaw
-            {-0.52f, 0.52f},          // kWaistRoll
-            {-0.52f, 0.52f},          // kWaistPitch
-            
-            // Left arm
-            {-3.0892f, 2.6704f},      // kLeftShoulderPitch
-            {-1.5882f, 2.2515f},      // kLeftShoulderRoll
-            {-2.618f, 2.618f},        // kLeftShoulderYaw
-            {-1.0472f, 2.0944f},      // kLeftElbow
-            {-1.97222f, 1.97222f},    // kLeftWristRoll
-            {-1.61443f, 1.61443f},    // kLeftWristPitch
-            {-1.61443f, 1.61443f},    // kLeftWristYaw
-            
-            // Right arm
-            {-3.0892f, 2.6704f},      // kRightShoulderPitch
-            {-2.2515f, 1.5882f},      // kRightShoulderRoll
-            {-2.618f, 2.618f},        // kRightShoulderYaw
-            {-1.0472f, 2.0944f},      // kRightElbow
-            {-1.97222f, 1.97222f},    // kRightWristRoll
-            {-1.61443f, 1.61443f},    // kRightWristPitch
-            {-1.61443f, 1.61443f},    // kRightWristYaw
-            
-            // Unused joints
-            {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}
-        };
     }
 
     // Initialize arms to default position
@@ -302,8 +257,10 @@ public:
     // Solve inverse kinematics for arm
     std::array<float, 7> SolveIK(const Eigen::Vector3f& target, bool is_left_arm, 
                                 const std::array<float, 7>* initial_guess = nullptr) {
-        std::array<float, 7> joint_positions = {0};
-        int arm_offset = is_left_arm ? kLeftShoulderPitch : kRightShoulderPitch;
+        // Simple analytical IK for 3DOF arm (shoulder_pitch, shoulder_roll, elbow)
+        // Wrist joints are set to default positions
+        
+        std::array<float, 7> joint_positions;
         
         if (is_left_arm) {
             // For left arm
@@ -337,23 +294,14 @@ public:
             shoulder_pitch = alpha - beta;
             shoulder_roll = atan2(target.y(), distance);
             
-            // Set joint positions with limits
-            joint_positions[0] = std::clamp(shoulder_pitch, 
-                                          joint_limits_[arm_offset].first, 
-                                          joint_limits_[arm_offset].second);
-            joint_positions[1] = std::clamp(shoulder_roll, 
-                                          joint_limits_[arm_offset+1].first, 
-                                          joint_limits_[arm_offset+1].second);
+            // Set joint positions
+            joint_positions[0] = shoulder_pitch;
+            joint_positions[1] = shoulder_roll;
             joint_positions[2] = 0; // shoulder_yaw (fixed for simple IK)
-            joint_positions[3] = std::clamp(elbow, 
-                                          joint_limits_[arm_offset+3].first, 
-                                          joint_limits_[arm_offset+3].second);
-            // Wrist joints are set to default positions
-            for (int i = 4; i < 7; ++i) {
-                joint_positions[i] = std::clamp(0.0f, 
-                                              joint_limits_[arm_offset+i].first, 
-                                              joint_limits_[arm_offset+i].second);
-            }
+            joint_positions[3] = elbow;
+            joint_positions[4] = 0; // wrist_roll (default)
+            joint_positions[5] = 0; // wrist_pitch (default)
+            joint_positions[6] = 0; // wrist_yaw (default)
         } else {
             // For right arm (similar but mirrored)
             float shoulder_pitch, shoulder_roll, elbow;
@@ -379,36 +327,31 @@ public:
             shoulder_pitch = alpha - beta;
             shoulder_roll = -atan2(target.y(), distance); // Mirrored
             
-            // Set joint positions with limits
-            joint_positions[0] = std::clamp(shoulder_pitch, 
-                                          joint_limits_[arm_offset].first, 
-                                          joint_limits_[arm_offset].second);
-            joint_positions[1] = std::clamp(shoulder_roll, 
-                                          joint_limits_[arm_offset+1].first, 
-                                          joint_limits_[arm_offset+1].second);
+            joint_positions[0] = shoulder_pitch;
+            joint_positions[1] = shoulder_roll;
             joint_positions[2] = 0;
-            joint_positions[3] = std::clamp(elbow, 
-                                          joint_limits_[arm_offset+3].first, 
-                                          joint_limits_[arm_offset+3].second);
-            // Wrist joints are set to default positions
-            for (int i = 4; i < 7; ++i) {
-                joint_positions[i] = std::clamp(0.0f, 
-                                              joint_limits_[arm_offset+i].first, 
-                                              joint_limits_[arm_offset+i].second);
-            }
+            joint_positions[3] = elbow;
+            joint_positions[4] = 0;
+            joint_positions[5] = 0;
+            joint_positions[6] = 0;
         }
         
         return joint_positions;
     }
 
-    // Compute forward kinematics
+    // 添加正向运动学计算方法
     Eigen::Vector3f ComputeForwardKinematics(bool is_left_arm, const std::array<float, 7>& joint_positions) {
+        // 简化的正向运动学计算
+        // 这里假设DH参数已经正确定义
+        
         float shoulder_pitch = joint_positions[0];
         float shoulder_roll = joint_positions[1];
         float elbow = joint_positions[3];
         
+        // 计算末端执行器位置
         float x, y, z;
         if (is_left_arm) {
+            // 左臂运动学计算
             x = left_arm_lengths_[1] * cos(shoulder_pitch) * cos(shoulder_roll) + 
                 left_arm_lengths_[2] * cos(shoulder_pitch + elbow) * cos(shoulder_roll);
             y = left_arm_lengths_[1] * sin(shoulder_roll) + 
@@ -416,6 +359,7 @@ public:
             z = left_arm_lengths_[1] * sin(shoulder_pitch) * cos(shoulder_roll) + 
                 left_arm_lengths_[2] * sin(shoulder_pitch + elbow) * cos(shoulder_roll);
         } else {
+            // 右臂运动学计算 (镜像)
             x = right_arm_lengths_[1] * cos(shoulder_pitch) * cos(shoulder_roll) + 
                 right_arm_lengths_[2] * cos(shoulder_pitch + elbow) * cos(shoulder_roll);
             y = -(right_arm_lengths_[1] * sin(shoulder_roll) + 
@@ -461,12 +405,6 @@ public:
         Eigen::Vector3f left_ee(0.2f, 0.1f, 0.0f);  // Initial position
         Eigen::Vector3f right_ee(0.2f, -0.1f, 0.0f); // Mirrored for right arm
 
-        // End-effector position limits based on joint limits
-        float max_x = 0.5f;  // Maximum forward reach
-        float max_y = 0.3f;  // Maximum side reach
-        float max_z = 0.5f;  // Maximum height
-        float min_z = -0.3f; // Minimum height
-
         std::cout << "\nKeyboard control activated!" << std::endl;
         std::cout << "Controlling " << 
             (controlled_arm_ == 'l' ? "LEFT arm" : 
@@ -477,9 +415,6 @@ public:
         std::cout << "  Q/E: Move end-effector up/down (Z axis)" << std::endl;
         std::cout << "  R: Reset to initial position" << std::endl;
         std::cout << "  ESC or Space: Exit keyboard control" << std::endl;
-        std::cout << "Position limits: X[" << -max_x << "," << max_x << "] "
-                  << "Y[" << -max_y << "," << max_y << "] "
-                  << "Z[" << min_z << "," << max_z << "]" << std::endl;
 
         // Get current joint positions
         auto current_jpos = GetCurrentJointPositions();
@@ -550,18 +485,11 @@ public:
                 }
 
                 if (position_changed) {
-                    // Apply position limits
                     if (controlled_arm_ == 'l' || controlled_arm_ == 'b') {
-                        left_ee.x() = std::clamp(left_ee.x(), -max_x, max_x);
-                        left_ee.y() = std::clamp(left_ee.y(), -max_y, max_y);
-                        left_ee.z() = std::clamp(left_ee.z(), min_z, max_z);
                         std::cout << "Left EE position: (" << left_ee.x() << ", " 
                                 << left_ee.y() << ", " << left_ee.z() << ")" << std::endl;
                     }
                     if (controlled_arm_ == 'r' || controlled_arm_ == 'b') {
-                        right_ee.x() = std::clamp(right_ee.x(), -max_x, max_x);
-                        right_ee.y() = std::clamp(right_ee.y(), -max_y, max_y);
-                        right_ee.z() = std::clamp(right_ee.z(), min_z, max_z);
                         std::cout << "Right EE position: (" << right_ee.x() << ", " 
                                 << right_ee.y() << ", " << right_ee.z() << ")" << std::endl;
                     }
@@ -602,12 +530,9 @@ public:
         return true;
     }
 
-    // Set individual joint command with limits
+    // Set individual joint command
     void SetJointCommand(JointIndex joint, float q, float dq, float kp, float kd, float tau) {
-        // Clamp joint position within limits
-        float clamped_q = std::clamp(q, joint_limits_[joint].first, joint_limits_[joint].second);
-        
-        msg_.motor_cmd().at(joint).q(clamped_q);
+        msg_.motor_cmd().at(joint).q(q);
         msg_.motor_cmd().at(joint).dq(dq);
         msg_.motor_cmd().at(joint).kp(kp);
         msg_.motor_cmd().at(joint).kd(kd);
@@ -653,9 +578,6 @@ private:
     std::vector<float> right_arm_lengths_;
     std::vector<std::tuple<float, float, float, float>> left_arm_dh_; // alpha, a, d, theta_offset
     std::vector<std::tuple<float, float, float, float>> right_arm_dh_;
-
-    // Joint limits from configuration file
-    std::vector<std::pair<float, float>> joint_limits_;
 
     float kp_;
     float kd_;

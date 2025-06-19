@@ -92,7 +92,7 @@
     evalParam_path_align_cost: 50.0                             # 3.轨迹的距离代价的比重
     evalParam_heading: 50.0                                     # 4.目标终点朝向代价的比重
     evalParam_vel: 0.5                                          # 5.速度比重
-    
+    ·
     #  关于姿态调整     此PID参数 后续需要会除以 pub_rate 所以该值可以给大一些   以PID_KP为例，PID_KP = kp *  pub_rate，kp才是输入PID系统的数值
     # 通用
     PID_Limmax: 3.0
