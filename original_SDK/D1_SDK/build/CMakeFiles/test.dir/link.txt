@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test.dir/src/test.cpp.o CMakeFiles/test.dir/src/msg/ArmString_.cpp.o -o test  -lunitree_sdk2 -lddsc -lddscxx -lrt -lpthread 

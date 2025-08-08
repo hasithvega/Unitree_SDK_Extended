@@ -1,11 +1,17 @@
 ## Unitree SLAM package
 
-| Version  | Information                                                                                                                                  |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| 20250410 | Optimize the obstacle avoidance effect of xt16;                                                                                              |
-| 20250606 | Adapt to the latest version of operation control SDK, UnitreeSDK 2.0; Added the setting of default operation control status for SLAM module; |
+| Version    | Information                                                                                                                                  |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| 20250410   | Optimize the obstacle avoidance effect of xt16;                                                                                              |
+| 20250606   | Adapt to the latest version of operation control SDK, UnitreeSDK 2.0; Added the setting of default operation control status for SLAM module; |
+| 20250806   | SLAM interface overhaul                                                                                                                      |
+| 20250806-W | SLAM interface for Go2-W                                                                                                                     |
 
 ## Announcement
+
+Updated 2025/08/06
+
+The SLAM interface has undergone a comprehensive overhaul, with most interfaces being significantly revised, now only compatible with version 1.1.7. Added support for Go2-W interfaces.
 
 Updated 2025/06/09:
 
